@@ -5,15 +5,18 @@
 File docker-compose will run KAFKA with default settings. KAFKA should be available on 192.168.99.100:9092. Zookeper should be available on 192.168.99.100:2181
 
 ## To run 
-$ docker-compose up -d
+
+    docker-compose up -d
 
 ## Access and execute commands
 To get access to running containers (with correct container ID:  docker ps)
 docker exec -it 5207587d116b /bin/bash
 * Check kafka location (opt/kafka/bin) and go there:
-ps aux | grep kafka
 
-cd /opt/kafka/bin
+
+
+    ps aux | grep kafka
+    cd /opt/kafka/bin
 * List of topics 
 
 
