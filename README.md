@@ -12,34 +12,34 @@ File docker-compose will run KAFKA with default settings. KAFKA should be availa
 To get access to running containers (with correct container ID:  docker ps)
 docker exec -it 5207587d116b /bin/bash
 * Check kafka location (opt/kafka/bin) and go there:
-
-
-    ps aux | grep kafka
-    cd /opt/kafka/bin
+```
+ps aux | grep kafka
+cd /opt/kafka/bin
+```
 * List of topics 
-
-
-    ./kafka-topics.sh --list --zookeeper zookeeper:2181
+```
+./kafka-topics.sh --list --zookeeper zookeeper:2181
+```
 * Create topic (1 partition, 1 replica) 
-
-
-    ./kafka-topics.sh --create --zookeeper zookeeper:2181 --replication-factor 1  --partitions 1 --topic Hello-Kafka
+```
+./kafka-topics.sh --create --zookeeper zookeeper:2181 --replication-factor 1  --partitions 1 --topic Hello-Kafka
+```
 * Add messages to topic. For this start producer and type some messages after this.
-
-
-    ./kafka-console-producer.sh --broker-list localhost:9092 --topic Hello-Kafka
+```
+./kafka-console-producer.sh --broker-list localhost:9092 --topic Hello-Kafka
+```
 * Consume messages. For this start consumer and give topic and offset
-
-    
-    ./kafka-console-consumer.sh --zookeeper zookeeper:2181 --topic Hello-Kafka --from-beginning
+```
+./kafka-console-consumer.sh --zookeeper zookeeper:2181 --topic Hello-Kafka --from-beginning
+```
 * Delete topic
-
-
-    ./kafka-topics.sh --zookeeper zookeeper:2181 --delete --topic Hello-kafka
+```
+./kafka-topics.sh --zookeeper zookeeper:2181 --delete --topic Hello-kafka
+```
 * Modify topic
-    
-    ./kafka-topics.sh --zookeeper zookeeper:2181 --alter --topic Hello-kafka --partitions 2
-    
+```
+./kafka-topics.sh --zookeeper zookeeper:2181 --alter --topic Hello-kafka --partitions 2
+```
 * Run multiple brokers on single node
 
     
