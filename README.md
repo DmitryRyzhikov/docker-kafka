@@ -14,7 +14,6 @@ docker exec -it 5207587d116b /bin/bash
 * Check kafka location (opt/kafka/bin) and go there:
 
 
-
     ps aux | grep kafka
     cd /opt/kafka/bin
 * List of topics 
